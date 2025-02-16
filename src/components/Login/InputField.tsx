@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     paddingHorizontal: 20,
     color: colors.textColor,
+    height: 50,
   },
 });
 
