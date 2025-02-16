@@ -5,20 +5,24 @@ import FastImage from "react-native-fast-image";
 import LinearGradient from "react-native-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 import { NavigationType } from "../../models/NavigationType";
+import DatePickerComponent from "./DatePicker";
+import GenderPicker from "./GenderPicker";
 
-const LoginForm = () => {
+const RegistrationForm = () => {
   const { navigate } = useNavigation<NavigationType>();
 
   const handleOnCreateOnePress = () => {
-    navigate("RegistrationScreen");
+    navigate("LoginScreen");
   };
 
   return (
     <View style={styles.rootContainer}>
       <View style={styles.topContainer}>
         <View style={styles.titleContainer}>
-          <Text style={styles.titleText}>Wanna fix you ride?</Text>
-          <Text style={styles.titleText}>Jump In!</Text>
+          <Text style={styles.titleText}>Hi there friend.</Text>
+          <Text style={styles.titleText}>
+            Wanna provide better life for your car?
+          </Text>
         </View>
         <View style={styles.logoContainer}>
           <FastImage
@@ -31,14 +35,22 @@ const LoginForm = () => {
       <View style={styles.inputFieldsContainer}>
         <InputFieldComponent text="Driver Name" placeholder="Type Your Name" />
         <InputFieldComponent
+          text="Driver Email"
+          placeholder="Type Your Email"
+        />
+        <InputFieldComponent
           text="Driver Password"
           placeholder="Type Your Password"
         />
       </View>
+      <View style={styles.dateAndGenderContainer}>
+        <DatePickerComponent />
+        <GenderPicker />
+      </View>
       <View style={styles.dontHaveAnAccountContainer}>
-        <Text style={styles.text}>Don't have an account?</Text>
+        <Text style={styles.text}>Already have an account?</Text>
         <Pressable onPress={handleOnCreateOnePress}>
-          <Text style={styles.ctaText}>Create one!</Text>
+          <Text style={styles.ctaText}>Sign in!</Text>
         </Pressable>
       </View>
 
@@ -48,17 +60,7 @@ const LoginForm = () => {
         end={{ x: 1, y: 1 }}
         style={styles.button}
       >
-        <View style={styles.leftContainer}>
-          <Text style={styles.buttonText}>GO TO GARAGE</Text>
-        </View>
-        <View style={styles.rightContainer}>
-          <Text style={styles.buttonText}>3-2-1-GO!</Text>
-          <FastImage
-            source={require("../../assets/icons/LoginScreen/ArrowRight.png")}
-            resizeMode={FastImage.resizeMode.contain}
-            style={styles.icon}
-          />
-        </View>
+        <Text style={styles.buttonText}>START A NEW JOURNEY</Text>
       </LinearGradient>
       <Text style={styles.text}>Sponsor: Onyx Premium Oil</Text>
     </View>
@@ -138,27 +140,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 1,
     borderColor: colors.textColor,
-  },
-
-  leftContainer: {
-    display: "flex",
-    flex: 1,
     justifyContent: "center",
-    alignItems: "flex-start",
-  },
-
-  rightContainer: {
-    display: "flex",
-    flexDirection: "row",
-    flex: 1,
-    justifyContent: "flex-end",
     alignItems: "center",
-    gap: 5,
-  },
-
-  icon: {
-    width: 16,
-    height: 16,
   },
 
   buttonText: {
@@ -166,6 +149,13 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontFamily: "Teko-Regular",
   },
+
+  // === DATE AND GENDER === //
+  dateAndGenderContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
 });
 
-export default LoginForm;
+export default RegistrationForm;
