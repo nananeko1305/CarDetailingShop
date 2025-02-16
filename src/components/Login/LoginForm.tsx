@@ -14,7 +14,7 @@ const LoginForm = () => {
         </View>
         <View style={styles.logoContainer}>
           <FastImage
-            source={require("../../assets/images/Logo.png")}
+            source={require("../../assets/images/logo.png")}
             resizeMode={FastImage.resizeMode.contain}
             style={styles.logo}
           />
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
 
   logoContainer: {
     display: "flex",
-    flex: 3,
+    flex: 1,
     justifyContent: "center",
   },
 
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   titleContainer: {
     display: "flex",
     flexDirection: "column",
-    flex: 1,
+    flex: 2,
   },
 
   titleText: {

@@ -1,7 +1,11 @@
-import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import StackAuthNavigation from './src/navigation/StackAuthNavigation';
+import React from "react";
+import { SafeAreaView, StyleSheet } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import StackAuthNavigation from "./src/navigation/StackAuthNavigation";
+import { createStackNavigator } from "@react-navigation/stack";
+import SplashScreen from "./src/screens/SplashScreen";
+
+const Stack = createStackNavigator();
 
 function App(): React.JSX.Element {
   return (
@@ -15,7 +19,7 @@ function App(): React.JSX.Element {
 
 const styles = StyleSheet.create({
   rootContainer: {
-    display: 'flex',
+    display: "flex",
     flex: 1,
   },
 });
