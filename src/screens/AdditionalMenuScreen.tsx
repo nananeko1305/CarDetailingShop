@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
+import { colors } from "../styles/colors";
 
 const AdditionalMenuScreen = () => {
   return (
@@ -12,6 +13,7 @@ const styles = StyleSheet.create({
   rootContainer: {
     display: "flex",
     flex: 1,
+    backgroundColor: colors.bottomBarBackground,
   },
 });
 

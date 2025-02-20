@@ -11,97 +11,101 @@ const Tab = createBottomTabNavigator();
 
 const BottomBarNavitaion = () => {
   return (
-    <Tab.Navigator
-      screenOptions={{
-        tabBarActiveTintColor: colors.activeBottomTabLabelColor,
-        tabBarInactiveTintColor: colors.inactiveBottomTabLabelColor,
-        headerShown: false,
-        tabBarShowLabel: false,
-        tabBarStyle: {
-          display: "flex",
-          flex: 1,
-          maxHeight: 80,
-          alignItems: "center",
-          justifyContent: "center",
-          borderTopEndRadius: 20,
-          borderTopStartRadius: 20,
-          backgroundColor: colors.bottomBarBackground,
-        },
-        tabBarIconStyle: {
-          flex: 1,
-          height: 50,
-          width: 45,
-        },
-      }}
-    >
-      <Tab.Screen
-        name="HomeScreen"
-        component={HomeScreen}
-        options={{
-          tabBarIcon: ({ size, color, focused }) => {
-            const tabBarIcon = focused
-              ? require("../assets/icons/homeIcon/home_icon_active.png")
-              : require("../assets/icons/homeIcon/home_icon_inactive.png");
-
-            return TabBarIcon(tabBarIcon, size, color, "HOME");
+    <View style={{ backgroundColor: colors.bottomBarBackground, flex: 1 }}>
+      <Tab.Navigator
+        screenOptions={{
+          tabBarActiveTintColor: colors.activeBottomTabLabelColor,
+          tabBarInactiveTintColor: colors.inactiveBottomTabLabelColor,
+          headerShown: false,
+          tabBarShowLabel: false,
+          tabBarStyle: {
+            display: "flex",
+            flex: 1,
+            maxHeight: 80,
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: 20,
+            borderWidth: 1,
+            borderColor: colors.inactiveBottomTabLabelColor,
+            backgroundColor: "transparent",
+            elevation: 0,
+            shadowOpacity: 0,
+          },
+          tabBarIconStyle: {
+            flex: 1,
+            height: 50,
+            width: 45,
           },
         }}
-      />
-      <Tab.Screen
-        name="ServiceScreen"
-        component={ServiceScreen}
-        options={{
-          tabBarIcon: ({ size, color, focused }) => {
-            const tabBarIcon = focused
-              ? require("../assets/icons/serviceIcon/service_icon_active.png")
-              : require("../assets/icons/serviceIcon/service_icon_inactive.png");
+      >
+        <Tab.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={{
+            tabBarIcon: ({ size, color, focused }) => {
+              const tabBarIcon = focused
+                ? require("../assets/icons/HomeIcon/home_icon_active.png")
+                : require("../assets/icons/HomeIcon/home_icon_inactive.png");
+              return TabBarIcon(tabBarIcon, size, color, "HOME");
+            },
+          }}
+        />
+        <Tab.Screen
+          name="ServiceScreen"
+          component={ServiceScreen}
+          options={{
+            tabBarIcon: ({ size, color, focused }) => {
+              const tabBarIcon = focused
+                ? require("../assets/icons/ServiceIcon/service_icon_active.png")
+                : require("../assets/icons/ServiceIcon/service_icon_inactive.png");
 
-            return TabBarIcon(tabBarIcon, size, color, "SERVICE");
-          },
-        }}
-      />
-      <Tab.Screen
-        name="nothing"
-        component={() => null}
-        options={{
-          tabBarButton: (props) => (
-            <View {...props} pointerEvents="none">
-              <FastImage
-                source={require("../assets/images/logo.png")}
-                resizeMode={FastImage.resizeMode.contain}
-                style={styles.logo}
-              />
-            </View>
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="DetailingScreen"
-        component={DetailingScreen}
-        options={{
-          tabBarIcon: ({ size, color, focused }) => {
-            const tabBarIcon = focused
-              ? require("../assets/icons/DetailingIcon/detailing_icon_active.png")
-              : require("../assets/icons/DetailingIcon/detailing_icon_inactive.png");
+              return TabBarIcon(tabBarIcon, size, color, "SERVICE");
+            },
+          }}
+        />
+        <Tab.Screen
+          name="nothing"
+          component={() => null}
+          options={{
+            tabBarButton: (props) => (
+              <View {...props} pointerEvents="none">
+                <FastImage
+                  source={require("../assets/images/logo.png")}
+                  resizeMode={FastImage.resizeMode.contain}
+                  style={styles.logo}
+                />
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="DetailingScreen"
+          component={DetailingScreen}
+          options={{
+            tabBarIcon: ({ size, color, focused }) => {
+              const tabBarIcon = focused
+                ? require("../assets/icons/DetailingIcon/detailing_icon_active.png")
+                : require("../assets/icons/DetailingIcon/detailing_icon_inactive.png");
 
-            return TabBarIcon(tabBarIcon, size, color, "SERVICE");
-          },
-        }}
-      />
-      <Tab.Screen
-        name="AdditionalMenuScreen"
-        component={AdditionalMenuScreen}
-        options={{
-          tabBarIcon: ({ size, color, focused }) => {
-            const tabBarIcon = focused
-              ? require("../assets/icons/MenuIcon/menu_icon_active.png")
-              : require("../assets/icons/MenuIcon/menu_icon_inactive.png");
+              return TabBarIcon(tabBarIcon, size, color, "SERVICE");
+            },
+          }}
+        />
+        <Tab.Screen
+          name="AdditionalMenuScreen"
+          component={AdditionalMenuScreen}
+          options={{
+            tabBarIcon: ({ size, color, focused }) => {
+              const tabBarIcon = focused
+                ? require("../assets/icons/MenuIcon/menu_icon_active.png")
+                : require("../assets/icons/MenuIcon/menu_icon_inactive.png");
 
-            return TabBarIcon(tabBarIcon, size, color, "SERVICE");
-          },
-        }}
-      />
-    </Tab.Navigator>
+              return TabBarIcon(tabBarIcon, size, color, "SERVICE");
+            },
+          }}
+        />
+      </Tab.Navigator>
+    </View>
   );
 };
 
