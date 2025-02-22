@@ -1,17 +1,23 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import FastImage from "react-native-fast-image";
 import { MenuOption } from "../../models/MenuOption";
 import { colors } from "../../styles/colors";
+import { useNavigation } from "@react-navigation/native";
+import { NavigationType } from "../../models/NavigationType";
 
 type MenuOptionProps = {
   menuOption: MenuOption;
 };
 
 const MenuOptionComponent = ({ menuOption }: MenuOptionProps) => {
-  console.log("aaaaaaa", menuOption.icon);
+  const { navigate } = useNavigation<NavigationType>();
+
+  const hadnleOnNavigate = () => {
+    navigate(menuOption.uri);
+  };
 
   return (
-    <View style={styles.rootContainer}>
+    <Pressable onPress={hadnleOnNavigate} style={styles.rootContainer}>
       <View style={styles.leftSection}>
         <FastImage
           source={menuOption.icon}
@@ -29,7 +35,7 @@ const MenuOptionComponent = ({ menuOption }: MenuOptionProps) => {
           resizeMode={FastImage.resizeMode.contain}
         />
       </View>
-    </View>
+    </Pressable>
   );
 };
 

@@ -6,6 +6,7 @@ import AdditionalMenuScreen from "../screens/AdditionalMenuScreen";
 import { Image, StyleSheet, Text, View } from "react-native";
 import FastImage from "react-native-fast-image";
 import { colors } from "../styles/colors";
+import AdditionalMenuStackNavigation from "./AdditionalMenuStackNavigation";
 
 const Tab = createBottomTabNavigator();
 
@@ -92,15 +93,15 @@ const BottomBarNavitaion = () => {
           }}
         />
         <Tab.Screen
-          name="AdditionalMenuScreen"
-          component={AdditionalMenuScreen}
+          name="AdditionalMenu"
+          component={AdditionalMenuStackNavigation}
           options={{
             tabBarIcon: ({ size, color, focused }) => {
               const tabBarIcon = focused
                 ? require("../assets/icons/MenuIcon/menu_icon_active.png")
                 : require("../assets/icons/MenuIcon/menu_icon_inactive.png");
 
-              return TabBarIcon(tabBarIcon, size, color, "SERVICE");
+              return TabBarIcon(tabBarIcon, size, color, "MENU");
             },
           }}
         />
