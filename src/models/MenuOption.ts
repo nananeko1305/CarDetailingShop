@@ -15,17 +15,17 @@ const menuOptions: MenuOption[] = [
   {
     text: "My Cars",
     icon: require("../assets/icons/AdditionalMenu/car_icon.png"),
-    uri: "",
+    uri: "CarsScreen",
   },
   {
     text: "Schedules",
     icon: require("../assets/icons/AdditionalMenu/calendar_icon.png"),
-    uri: "",
+    uri: "SchedulesScreen",
   },
   {
     text: "Logout",
     icon: require("../assets/icons/AdditionalMenu/logout_icon.png"),
-    uri: "",
+    uri: "Logout",
   },
 ];
 

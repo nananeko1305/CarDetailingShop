@@ -1,4 +1,7 @@
-import { createStackNavigator } from "@react-navigation/stack";
+import {
+  CardStyleInterpolators,
+  createStackNavigator,
+} from "@react-navigation/stack";
 import LoginScreen from "../screens/LoginScreen";
 import RegistrationScreen from "../screens/RegistrationScreen";
 import SplashScreen from "../screens/SplashScreen";
@@ -12,7 +15,7 @@ const StackNavigation = () => {
       initialRouteName="Home"
       screenOptions={{
         headerShown: false,
-        animation: "fade",
+        cardStyleInterpolator: CardStyleInterpolators.forFadeFromCenter,
       }}
     >
       <Stack.Screen name="SplashScreen" component={SplashScreen} />

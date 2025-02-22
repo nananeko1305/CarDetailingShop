@@ -10,14 +10,24 @@ type MenuOptionProps = {
 };
 
 const MenuOptionComponent = ({ menuOption }: MenuOptionProps) => {
-  const { navigate } = useNavigation<NavigationType>();
+  const { navigate, reset } = useNavigation<NavigationType>();
 
   const hadnleOnNavigate = () => {
     navigate(menuOption.uri);
   };
 
+  const handleOnLogout = () => {
+    reset({
+      index: 0,
+      routes: [{ name: "LoginScreen" }],
+    });
+  };
+
   return (
-    <Pressable onPress={hadnleOnNavigate} style={styles.rootContainer}>
+    <Pressable
+      onPress={menuOption.uri === "Logout" ? handleOnLogout : hadnleOnNavigate}
+      style={styles.rootContainer}
+    >
       <View style={styles.leftSection}>
         <FastImage
           source={menuOption.icon}
