@@ -1,12 +1,11 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreen from "../screens/DetailingScreen";
 import ServiceScreen from "../screens/ServiceScreen";
 import DetailingScreen from "../screens/DetailingScreen";
-import AdditionalMenuScreen from "../screens/AdditionalMenuScreen";
 import { Image, StyleSheet, Text, View } from "react-native";
 import FastImage from "react-native-fast-image";
 import { colors } from "../styles/colors";
 import AdditionalMenuStackNavigation from "./AdditionalMenuStackNavigation";
+import HomeScreen from "../screens/HomeScreen";
 
 const Tab = createBottomTabNavigator();
 

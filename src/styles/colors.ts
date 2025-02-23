@@ -9,5 +9,5 @@ export const colors = {
   activeBottomTabLabelColor: "#D0D0D0",
   inactiveBottomTabLabelColor: "#6644D9",
 
-
+  bg_0E0E28: "#0E0E28",
 };
