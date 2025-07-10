@@ -1,16 +1,16 @@
 import { StyleSheet, Text, View } from "react-native";
+import HeaderComponent from "../components/Header";
 import FastImage from "react-native-fast-image";
-import RegistrationForm from "../components/Registration/RegistrationForm";
 
-const ReistrationScreen = () => {
+const HomeScreen = () => {
   return (
     <View style={styles.rootContainer}>
       <FastImage
-        source={require("../assets/images/registration.png")}
-        resizeMode={FastImage.resizeMode.cover}
+        source={require("../assets/images/home.png")}
         style={styles.backgroundImage}
+        resizeMode={FastImage.resizeMode.cover}
       />
-      <RegistrationForm />
+      <HeaderComponent />
     </View>
   );
 };
@@ -19,15 +19,14 @@ const styles = StyleSheet.create({
   rootContainer: {
     position: "relative",
     display: "flex",
-    justifyContent: "center",
     flex: 1,
   },
-
   backgroundImage: {
     position: "absolute",
-    width: "100%",
     height: "100%",
+    width: "100%",
+    flex: 1,
   },
 });
 
-export default ReistrationScreen;
+export default HomeScreen;

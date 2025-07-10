@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import { colors } from "../../styles/colors";
+import { colors } from "../styles/colors";
 import { TextInput } from "react-native-gesture-handler";
 
 type InputFieldComponentProps = {

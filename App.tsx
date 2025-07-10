@@ -1,11 +1,21 @@
-import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import StackAuthNavigation from './src/navigation/StackAuthNavigation';
+import React, { useEffect } from "react";
+import { SafeAreaView, StatusBar, StyleSheet } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import StackAuthNavigation from "./src/navigation/StackAuthNavigation";
+import { createStackNavigator } from "@react-navigation/stack";
+import { colors } from "./src/styles/colors";
+import changeNavigationBarColor from "react-native-navigation-bar-color";
+
+const Stack = createStackNavigator();
 
 function App(): React.JSX.Element {
+  useEffect(() => {
+    changeNavigationBarColor(colors.bg_0E0E28, true);
+  }, []);
+
   return (
     <SafeAreaView style={styles.rootContainer}>
+      <StatusBar backgroundColor={colors.bg_0E0E28} />
       <NavigationContainer>
         <StackAuthNavigation />
       </NavigationContainer>
@@ -15,7 +25,7 @@ function App(): React.JSX.Element {
 
 const styles = StyleSheet.create({
   rootContainer: {
-    display: 'flex',
+    display: "flex",
     flex: 1,
   },
 });
