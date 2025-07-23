@@ -7,6 +7,7 @@ export const getStyles = () =>
     rootView: {
       height: normalize(150),
       backgroundColor: colors.bg_0E0E28,
+      opacity: 0.9,
     },
     titleText: {
       flex: 1,
