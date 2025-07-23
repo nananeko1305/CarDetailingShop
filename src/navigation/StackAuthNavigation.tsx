@@ -12,7 +12,7 @@ const Stack = createStackNavigator();
 const StackNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="SplashScreen"
       screenOptions={{
         headerShown: false,
         cardStyleInterpolator: CardStyleInterpolators.forFadeFromCenter,

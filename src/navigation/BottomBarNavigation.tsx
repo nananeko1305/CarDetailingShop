@@ -6,6 +6,7 @@ import FastImage from "react-native-fast-image";
 import { colors } from "../styles/colors";
 import AdditionalMenuStackNavigation from "./AdditionalMenuStackNavigation";
 import HomeScreen from "../screens/HomeScreen";
+import { normalizeFont } from "../utils/normalize";
 
 const Tab = createBottomTabNavigator();
 
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
   tabBarIcon: {},
   tabBarTitle: {
     fontFamily: "Teko-Regular",
-    fontSize: 20,
+    fontSize: normalizeFont(20),
   },
   logo: {
     height: 70,

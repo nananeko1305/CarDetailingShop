@@ -13,6 +13,10 @@ const LoginForm = () => {
     navigate("RegistrationScreen");
   };
 
+  const handleOnLogin = () => {
+    navigate("Home");
+  };
+
   return (
     <View style={styles.rootContainer}>
       <View style={styles.topContainer}>
@@ -41,25 +45,26 @@ const LoginForm = () => {
           <Text style={styles.ctaText}>Create one!</Text>
         </Pressable>
       </View>
-
-      <LinearGradient
-        colors={["#3B2A7E", "#522E61"]}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}
-        style={styles.button}
-      >
-        <View style={styles.leftContainer}>
-          <Text style={styles.buttonText}>GO TO GARAGE</Text>
-        </View>
-        <View style={styles.rightContainer}>
-          <Text style={styles.buttonText}>3-2-1-GO!</Text>
-          <FastImage
-            source={require("../../assets/icons/LoginScreen/ArrowRight.png")}
-            resizeMode={FastImage.resizeMode.contain}
-            style={styles.icon}
-          />
-        </View>
-      </LinearGradient>
+      <Pressable onPress={handleOnLogin}>
+        <LinearGradient
+          colors={["#3B2A7E", "#522E61"]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={styles.button}
+        >
+          <View style={styles.leftContainer}>
+            <Text style={styles.buttonText}>GO TO GARAGE</Text>
+          </View>
+          <View style={styles.rightContainer}>
+            <Text style={styles.buttonText}>3-2-1-GO!</Text>
+            <FastImage
+              source={require("../../assets/icons/LoginScreen/ArrowRight.png")}
+              resizeMode={FastImage.resizeMode.contain}
+              style={styles.icon}
+            />
+          </View>
+        </LinearGradient>
+      </Pressable>
       <Text style={styles.text}>Sponsor: Onyx Premium Oil</Text>
     </View>
   );
