@@ -66,7 +66,7 @@ const BottomBarNavitaion = () => {
         />
         <Tab.Screen
           name="nothing"
-          component={() => null}
+          component={HomeScreen}
           options={{
             tabBarButton: (props) => (
               <View {...props} pointerEvents="none">

@@ -3,6 +3,8 @@ import HeaderComponent from "../components/Header";
 import FastImage from "react-native-fast-image";
 import YourGarageComponent from "../components/YourGarage/YourGarage";
 import CareSelection from "../components/CareSelection/CareSelection";
+import HotDealsComponent from "../components/HotDeals/HotDeals";
+import { ScrollView } from "react-native-gesture-handler";
 
 const HomeScreen = () => {
   return (
@@ -13,8 +15,11 @@ const HomeScreen = () => {
         resizeMode={FastImage.resizeMode.cover}
       />
       <HeaderComponent />
-      <YourGarageComponent />
-      <CareSelection />
+      <ScrollView>
+        <YourGarageComponent />
+        <CareSelection />
+        <HotDealsComponent />
+      </ScrollView>
     </View>
   );
 };
