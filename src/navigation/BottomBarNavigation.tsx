@@ -88,7 +88,7 @@ const BottomBarNavitaion = () => {
                 ? require("../assets/icons/DetailingIcon/detailing_icon_active.png")
                 : require("../assets/icons/DetailingIcon/detailing_icon_inactive.png");
 
-              return TabBarIcon(tabBarIcon, size, color, "SERVICE");
+              return TabBarIcon(tabBarIcon, size, color, "DETAIL");
             },
           }}
         />
