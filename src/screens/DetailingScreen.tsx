@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import FastImage from "react-native-fast-image";
 import HeaderComponent from "../components/Header";
+import DetailingAppointmentComponent from "../components/Appointmets/DetailingAppointment/DetailingAppointments";
 
 const DetailingScreen = () => {
   return (
@@ -11,6 +12,7 @@ const DetailingScreen = () => {
         resizeMode={FastImage.resizeMode.cover}
       />
       <HeaderComponent />
+      <DetailingAppointmentComponent />
     </View>
   );
 };

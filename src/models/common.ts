@@ -118,3 +118,53 @@ export const initialServiceAppointment: ServiceAppointment = {
   },
   appointmentDate: formatDate(new Date()),
 };
+
+export interface BasicWash {
+  foamSpray: boolean;
+  microPowderWash: boolean;
+  waxProtection: boolean;
+  demineralizedRinsing: boolean;
+}
+
+export interface InteriorDetailing {
+  deepCleaning: boolean;
+  wacuumCleaning: boolean;
+}
+
+export interface ExteriorDetailing {
+  decontamination: boolean;
+  carPolishing: boolean;
+  headlightPolishing: boolean;
+  ceramicProtection: boolean;
+  brushWashing: boolean;
+  seatProtection: boolean;
+}
+
+export interface DetailingAppointment {
+  basicWash: BasicWash;
+  interiorDetailing: InteriorDetailing;
+  exteriorDetailing: ExteriorDetailing;
+  appointmentDate: string;
+}
+
+export const interiorDetailingAppointment: DetailingAppointment = {
+  basicWash: {
+    foamSpray: false,
+    microPowderWash: false,
+    waxProtection: false,
+    demineralizedRinsing: false,
+  },
+  interiorDetailing: {
+    deepCleaning: false,
+    wacuumCleaning: false,
+  },
+  exteriorDetailing: {
+    decontamination: false,
+    carPolishing: false,
+    headlightPolishing: false,
+    ceramicProtection: false,
+    brushWashing: false,
+    seatProtection: false,
+  },
+  appointmentDate: formatDate(new Date()),
+};
