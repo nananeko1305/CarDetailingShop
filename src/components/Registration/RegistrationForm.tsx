@@ -1,12 +1,12 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { colors } from "../../styles/colors";
-import InputFieldComponent from "../InputField";
+import InputFieldComponent from "../InputField/InputField";
 import FastImage from "react-native-fast-image";
 import LinearGradient from "react-native-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 import { NavigationType } from "../../models/NavigationType";
 import DatePickerComponent from "./DatePicker";
-import GenderPicker from "./GenderPicker";
+import GenderPicker from "../GenderPicker/GenderPicker";
 
 const RegistrationForm = () => {
   const { navigate } = useNavigation<NavigationType>();

@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { colors } from "../../styles/colors";
-import InputFieldComponent from "../InputField";
+import InputFieldComponent from "../InputField/InputField";
 import FastImage from "react-native-fast-image";
 import LinearGradient from "react-native-linear-gradient";
 import { useNavigation } from "@react-navigation/native";

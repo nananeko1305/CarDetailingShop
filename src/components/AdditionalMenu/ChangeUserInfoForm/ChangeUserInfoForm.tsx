@@ -1,14 +1,17 @@
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
-import { colors } from "../../styles/colors";
-import InputFieldComponent from "../InputField";
-import DatePickerComponent from "../Registration/DatePicker";
-import GenderPicker from "../Registration/GenderPicker";
+import { colors } from "../../../styles/colors";
+import InputFieldComponent from "../../InputField/InputField";
+import DatePickerComponent from "../../Registration/DatePicker";
+import GenderPicker from "../../GenderPicker/GenderPicker";
 import LinearGradient from "react-native-linear-gradient";
 import { useState } from "react";
+import { getStyles } from "./ChangeUserInfoForm.styles";
 
 const ChangeUserFormComponent = () => {
   const [isPasswordSectionVisible, setIsPasswordSectionVisible] =
     useState(false);
+
+  const styles = getStyles();
 
   return (
     <ScrollView style={styles.rootContainer}>
@@ -21,8 +24,11 @@ const ChangeUserFormComponent = () => {
       </View>
       <View style={styles.inputFieldsSection}>
         <InputFieldComponent placeholder="Driver Name" text="Driver Name" />
-        <InputFieldComponent placeholder="Driver Name" text="Driver Name" />
-        <DatePickerComponent />
+        <InputFieldComponent placeholder="Driver Email" text="Driver Email" />
+        <View style={styles.pickersSection}>
+          <DatePickerComponent />
+          <GenderPicker />
+        </View>
       </View>
       <Pressable
         onPress={() => setIsPasswordSectionVisible(!isPasswordSectionVisible)}
@@ -54,7 +60,7 @@ const ChangeUserFormComponent = () => {
         </View>
       )}
       <Pressable
-        onPress={() => setIsPasswordSectionVisible(!isPasswordSectionVisible)}
+        onPress={() => setIsPasswordSectionVisible(false)}
         style={styles.confirmButtonWrapper}
       >
         <LinearGradient
@@ -69,66 +75,5 @@ const ChangeUserFormComponent = () => {
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  rootContainer: {
-    display: "flex",
-    flex: 1,
-    paddingHorizontal: 30,
-    rowGap: 20,
-    paddingTop: 80,
-  },
-  button: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    height: 50,
-    borderWidth: 1,
-    borderColor: colors.textColor,
-    borderRadius: 8,
-  },
-  buttonText: {
-    fontFamily: "Teko-Regular",
-    fontSize: 24,
-    color: colors.textColor,
-  },
-  userInfoSection: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 20,
-    paddingBottom: 20,
-  },
-  userImage: {
-    height: 80,
-    width: 80,
-    backgroundColor: colors.textColor,
-    borderRadius: 40,
-  },
-  text: {
-    fontSize: 24,
-    color: colors.textColor,
-    fontFamily: "Teko-Regular",
-  },
-  passwordSection: {
-    paddingTop: 20,
-    rowGap: 20,
-  },
-  buttonWrapper: {
-    marginTop: 30,
-  },
-  confirmButtonWrapper: {
-    paddingTop: 30,
-    paddingBottom: 100,
-  },
-  inputFieldsSection: {
-    rowGap: 20,
-  },
-  confirmButtonText: {
-    fontSize: 32,
-    color: colors.textColor,
-    fontFamily: "Teko-Regular",
-  },
-});
 
 export default ChangeUserFormComponent;

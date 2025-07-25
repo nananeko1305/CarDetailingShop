@@ -3,6 +3,7 @@ import { colors } from "../../styles/colors";
 import { Pressable, TextInput } from "react-native-gesture-handler";
 import { useState } from "react";
 import DateTimePicker from "@react-native-community/datetimepicker";
+import { normalize, normalizeFont } from "../../utils";
 
 const DatePickerComponent = () => {
   const [date, setDate] = useState<Date>(new Date());
@@ -12,7 +13,6 @@ const DatePickerComponent = () => {
 
   const onChange = (event: any, selectedDate: Date | undefined) => {
     const currentDate = selectedDate || date;
-    console.log(currentDate.getDate());
     setShow(false);
     setDate(currentDate);
     setIsDatePicked(true);
@@ -24,7 +24,7 @@ const DatePickerComponent = () => {
 
   return (
     <View style={styles.rootContainer}>
-      <Text style={styles.text}>Driver Date Of Birth </Text>
+      <Text style={styles.text}>Date Of Birth </Text>
       <Pressable onPress={() => setShow(true)} style={styles.datePicker}>
         <Text style={styles.text}>
           {isDatePicked ? formatedDate : "PICK A DATE"}
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.textColor,
     paddingHorizontal: 20,
-    height: 50,
+    height: normalize(50),
     justifyContent: "center",
     alignItems: "center",
   },
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   text: {
     color: colors.textColor,
     fontFamily: "Teko-Regular",
-    fontSize: 24,
+    fontSize: normalizeFont(20),
   },
 });
 

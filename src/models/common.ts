@@ -1,6 +1,11 @@
 import { colors } from "../styles/colors";
 import { formatDate } from "../utils/dateFormatter";
 
+export enum Gender {
+  Male = "Male",
+  Female = "Female",
+}
+
 export interface Car {
   brand: string;
   model: string;

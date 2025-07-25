@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import { colors } from "../styles/colors";
-import ChangeUserFormComponent from "../components/AdditionalMenu/ChangeUserInfoForm";
+import ChangeUserFormComponent from "../components/AdditionalMenu/ChangeUserInfoForm/ChangeUserInfoForm";
 
 const ProfileScreen = () => {
   return (
