@@ -16,4 +16,5 @@ export const colors = {
   popularDeal: "#323232",
   gold: "#FFD700",
   white: "#FFFFFF",
+  checkBoxColor: "#BF7CDB",
 };

@@ -1,4 +1,5 @@
 import { colors } from "../styles/colors";
+import { formatDate } from "../utils/dateFormatter";
 
 export interface Car {
   brand: string;
@@ -67,3 +68,53 @@ export const hotDealsData: HotDeal[] = [
     titleTextColor: colors.darkGrayText,
   },
 ];
+
+export interface ServiceAppointment {
+  basicService: BasicService;
+  advancedService: AdvancedService;
+  bonusService: BonusService;
+  appointmentDate: string;
+}
+
+export interface BasicService {
+  oilChange: boolean;
+  oilFilterChange: boolean;
+  airFilterChange: boolean;
+  cabinFilterChange: boolean;
+}
+
+export interface AdvancedService {
+  sparkPlugChange: boolean;
+  coolantChange: boolean;
+  brakesChange: boolean;
+  brakeFluidChange: boolean;
+}
+
+export interface BonusService {
+  checkTirePressure: boolean;
+  checkOilLevel: boolean;
+  checkCoolantLevel: boolean;
+  checkWasherFluidLevel: boolean;
+}
+
+export const initialServiceAppointment: ServiceAppointment = {
+  basicService: {
+    oilChange: false,
+    oilFilterChange: false,
+    airFilterChange: false,
+    cabinFilterChange: false,
+  },
+  advancedService: {
+    sparkPlugChange: false,
+    coolantChange: false,
+    brakesChange: false,
+    brakeFluidChange: false,
+  },
+  bonusService: {
+    checkTirePressure: false,
+    checkOilLevel: false,
+    checkCoolantLevel: false,
+    checkWasherFluidLevel: false,
+  },
+  appointmentDate: formatDate(new Date()),
+};
