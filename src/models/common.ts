@@ -28,21 +28,12 @@ export const cars: Car[] = [
   },
   {
     brand: "Opel",
-    model: "Astra J",
-    year: 2012,
+    model: "Astra G",
+    year: 2001,
     engine: "2.0",
     fuelType: "Petrol",
-    power: "208KW/280HP",
-    image: require("../assets/images/astraj.jpg"),
-  },
-  {
-    brand: "Opel",
-    model: "Astra J",
-    year: 2012,
-    engine: "2.0",
-    fuelType: "Petrol",
-    power: "208KW/280HP",
-    image: require("../assets/images/astraj.jpg"),
+    power: "141KW/200HP",
+    image: require("../assets/images/astrag.jpg"),
   },
 ];
 
