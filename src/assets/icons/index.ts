@@ -6,6 +6,8 @@ import FireIcon from "./FireIcon.svg";
 import DateIcon from "./DateIcon.svg";
 import CheckIcon from "./CheckIcon.svg";
 import CrossIcon from "./CrossIcon.svg";
+import ArrowLeftIcon from "./ArrowLeftIcon.svg";
+import PointerIcon from "./PointerIcon.svg";
 
 export {
   CarArrowLeftIcon,
@@ -16,6 +18,8 @@ export {
   DateIcon,
   CheckIcon,
   CrossIcon,
+  ArrowLeftIcon,
+  PointerIcon,
 };
 
 export const icons = {

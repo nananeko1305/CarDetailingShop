@@ -17,4 +17,6 @@ export const colors = {
   gold: "#FFD700",
   white: "#FFFFFF",
   checkBoxColor: "#BF7CDB",
+
+  pickImageTextColor: "#684ADC",
 };

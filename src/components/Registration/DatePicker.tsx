@@ -45,8 +45,7 @@ const DatePickerComponent = () => {
 
 const styles = StyleSheet.create({
   rootContainer: {
-    display: "flex",
-    width: "45%",
+    flex: 1,
   },
 
   datePicker: {

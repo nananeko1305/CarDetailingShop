@@ -5,7 +5,7 @@ import { normalize, normalizeFont } from "../../utils";
 export const getStyles = () =>
   StyleSheet.create({
     rootView: {
-      width: "45%",
+      flex: 1,
       height: normalize(50),
     },
     text: {

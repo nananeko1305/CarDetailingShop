@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
 import { colors } from "../../../styles/colors";
+import { normalize, normalizeFont } from "../../../utils";
 
 export const getStyles = () =>
   StyleSheet.create({
     rootContainer: {
-      display: "flex",
       flex: 1,
       paddingHorizontal: 30,
       rowGap: 20,
@@ -21,7 +21,7 @@ export const getStyles = () =>
     },
     buttonText: {
       fontFamily: "Teko-Regular",
-      fontSize: 24,
+      fontSize: normalizeFont(24),
       color: colors.textColor,
     },
     userInfoSection: {
@@ -57,12 +57,13 @@ export const getStyles = () =>
       rowGap: 20,
     },
     confirmButtonText: {
-      fontSize: 32,
+      fontSize: normalizeFont(24),
       color: colors.textColor,
       fontFamily: "Teko-Regular",
     },
     pickersSection: {
       flexDirection: "row",
       justifyContent: "space-between",
+      gap: normalize(20),
     },
   });

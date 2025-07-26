@@ -5,6 +5,7 @@ import { normalize, normalizeFont } from "../../utils";
 export const getStyles = () =>
   StyleSheet.create({
     rootView: {
+      flex: 1,
       flexDirection: "column",
     },
     text: {
