@@ -224,4 +224,80 @@ export const mockSchedules: Schedule[] = [
       appointmentDate: formatDate(new Date()),
     },
   },
+  {
+    id: "schedule3",
+    car: cars[0],
+
+    detailingAppointment: {
+      basicWash: {
+        foamSpray: false,
+        microPowderWash: false,
+        waxProtection: true,
+        demineralizedRinsing: true,
+      },
+      interiorDetailing: {
+        deepCleaning: false,
+        wacuumCleaning: true,
+      },
+      exteriorDetailing: {
+        decontamination: true,
+        carPolishing: false,
+        headlightPolishing: false,
+        ceramicProtection: false,
+        brushWashing: false,
+        seatProtection: true,
+      },
+      appointmentDate: formatDate(new Date()),
+    },
+  },
+  {
+    id: "schedule4",
+    car: cars[1],
+    serviceAppointment: {
+      basicService: {
+        oilChange: true,
+        oilFilterChange: true,
+        airFilterChange: false,
+        cabinFilterChange: false,
+      },
+      advancedService: {
+        sparkPlugChange: false,
+        coolantChange: true,
+        brakesChange: false,
+        brakeFluidChange: false,
+      },
+      bonusService: {
+        checkTirePressure: true,
+        checkOilLevel: true,
+        checkCoolantLevel: false,
+        checkWasherFluidLevel: false,
+      },
+      appointmentDate: formatDate(new Date()),
+    },
+  },
+  {
+    id: "schedule5",
+    car: cars[1],
+    serviceAppointment: {
+      basicService: {
+        oilChange: true,
+        oilFilterChange: true,
+        airFilterChange: false,
+        cabinFilterChange: false,
+      },
+      advancedService: {
+        sparkPlugChange: false,
+        coolantChange: true,
+        brakesChange: false,
+        brakeFluidChange: false,
+      },
+      bonusService: {
+        checkTirePressure: true,
+        checkOilLevel: true,
+        checkCoolantLevel: false,
+        checkWasherFluidLevel: false,
+      },
+      appointmentDate: formatDate(new Date()),
+    },
+  },
 ];
