@@ -7,6 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 import { NavigationType } from "../../models/NavigationType";
 import DatePickerComponent from "./DatePicker";
 import GenderPicker from "../GenderPicker/GenderPicker";
+import { normalize } from "../../utils";
 
 const RegistrationForm = () => {
   const { navigate } = useNavigation<NavigationType>();
@@ -112,8 +113,8 @@ const styles = StyleSheet.create({
   },
 
   inputFieldsContainer: {
-    display: "flex",
     rowGap: 20,
+    height: normalize(250),
   },
 
   // === DONT HAVE AN ACCOUNT STYLES === //

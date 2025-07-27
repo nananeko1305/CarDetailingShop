@@ -5,6 +5,7 @@ import FastImage from "react-native-fast-image";
 import LinearGradient from "react-native-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 import { NavigationType } from "../../models/NavigationType";
+import { normalize } from "../../utils";
 
 const LoginForm = () => {
   const { navigate } = useNavigation<NavigationType>();
@@ -72,7 +73,6 @@ const LoginForm = () => {
 
 const styles = StyleSheet.create({
   rootContainer: {
-    display: "flex",
     marginHorizontal: 20,
     backgroundColor: colors.formBackground,
     opacity: 0.95,
@@ -115,8 +115,8 @@ const styles = StyleSheet.create({
   },
 
   inputFieldsContainer: {
-    display: "flex",
     rowGap: 20,
+    height: normalize(150),
   },
 
   // === DONT HAVE AN ACCOUNT STYLES === //
