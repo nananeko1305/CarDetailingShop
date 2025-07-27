@@ -164,3 +164,64 @@ export const interiorDetailingAppointment: DetailingAppointment = {
   },
   appointmentDate: formatDate(new Date()),
 };
+
+export interface Schedule {
+  id: string;
+  car: Car;
+  serviceAppointment?: ServiceAppointment;
+  detailingAppointment?: DetailingAppointment;
+}
+
+export const mockSchedules: Schedule[] = [
+  {
+    id: "schedule1",
+    car: cars[0],
+    serviceAppointment: {
+      basicService: {
+        oilChange: true,
+        oilFilterChange: true,
+        airFilterChange: false,
+        cabinFilterChange: false,
+      },
+      advancedService: {
+        sparkPlugChange: false,
+        coolantChange: true,
+        brakesChange: false,
+        brakeFluidChange: false,
+      },
+      bonusService: {
+        checkTirePressure: true,
+        checkOilLevel: true,
+        checkCoolantLevel: false,
+        checkWasherFluidLevel: false,
+      },
+      appointmentDate: formatDate(new Date()),
+    },
+  },
+  {
+    id: "schedule2",
+    car: cars[1],
+
+    detailingAppointment: {
+      basicWash: {
+        foamSpray: false,
+        microPowderWash: false,
+        waxProtection: true,
+        demineralizedRinsing: true,
+      },
+      interiorDetailing: {
+        deepCleaning: false,
+        wacuumCleaning: true,
+      },
+      exteriorDetailing: {
+        decontamination: true,
+        carPolishing: false,
+        headlightPolishing: false,
+        ceramicProtection: false,
+        brushWashing: false,
+        seatProtection: true,
+      },
+      appointmentDate: formatDate(new Date()),
+    },
+  },
+];

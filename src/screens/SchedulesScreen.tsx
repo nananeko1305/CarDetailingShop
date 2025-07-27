@@ -1,10 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
 import { colors } from "../styles/colors";
+import BackButton from "../components/BackButton/BackButton";
+import { normalize, normalizeFont } from "../utils";
+import SchedulesList from "../components/Schedules/SchedulesList/SchedulesList";
 
 const SchedulesScreen = () => {
   return (
     <View style={styles.rootContainer}>
-      <Text>Hello SchedulesScreen</Text>
+      <BackButton />
+      <Text style={styles.titleText}>See All Your Appointments</Text>
+      <SchedulesList />
     </View>
   );
 };
@@ -14,7 +19,14 @@ const styles = StyleSheet.create({
     display: "flex",
     flex: 1,
     backgroundColor: colors.bottomBarBackground,
-    paddingHorizontal: 40,
+    paddingHorizontal: normalize(30),
+  },
+  titleText: {
+    fontFamily: "Teko-Regular",
+    color: colors.textColor,
+    fontSize: normalizeFont(30),
+    textAlign: "center",
+    marginTop: normalizeFont(50),
   },
 });
 
