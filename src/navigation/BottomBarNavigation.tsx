@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
   tabBarIcon: {},
   tabBarTitle: {
     fontFamily: "Teko-Regular",
-    fontSize: normalizeFont(20),
+    fontSize: normalizeFont(16),
   },
   logo: {
     height: 70,
